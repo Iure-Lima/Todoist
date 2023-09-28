@@ -1,27 +1,14 @@
-# React + TypeScript + Vite
+# Projeto
+Esse projeto tem como objetivo a criação de um todoist funcional com integração a um banco de dados.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Escopo
+Nesse repositório será armazenado os arquivos do desenvolvimento do nosso frontend usando a ferramenta react.
 
-Currently, two official plugins are available:
+## Passos Iniciais do Projeto
+Primeiramente temos que abrir um terminal na nossa pasta do projeto e teremos que executar os comandos abaixo para começar a trabalhar nesse projeto.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   npm install
+	npm run dev
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Dependências necessárias
+Abaixo temos todos os comandos de instalação das dependências necessárias para estar executando perfeitamente esse código.
