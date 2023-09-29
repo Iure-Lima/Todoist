@@ -12,3 +12,5 @@ Primeiramente temos que abrir um terminal na nossa pasta do projeto e teremos qu
 
 ## Dependências necessárias
 Abaixo temos todos os comandos de instalação das dependências necessárias para estar executando perfeitamente esse código.
+
+   npm install react-router-dom
