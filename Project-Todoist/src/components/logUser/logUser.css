@@ -1,0 +1,125 @@
+#logo{
+  display: block;
+  /* position: absolute; */
+  margin-top: 44px;
+  margin-left: 55px;
+}
+
+#container{
+  width: 100%;
+  height: 100%;
+}
+
+#content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  background-color: white;
+  border-radius: 11px;
+  margin: auto auto auto auto;
+  padding-bottom: 41px;
+}
+#content h2{
+  color: black;
+  font-size: 36px;
+  font-family: Arial;
+  font-weight: 700;
+  word-wrap: break-word;
+  margin-top: 49px;
+  margin-bottom: 52px;
+
+}
+
+.form-group{
+  width: 300px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.form-group label{
+  color: black;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+.form-group input{
+  height: 60px;
+  width: 100%;
+  background: none;
+  border-radius: 6px;
+  border: 1px #C1C1C1 solid;
+  padding-left: 13px;
+  box-sizing: border-box;
+
+  color: black;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+.form-group svg{
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  cursor: pointer;
+}
+.form-group a{
+  height: 20px;
+  color: black;
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: 600;
+  word-wrap: break-word;
+  text-decoration: none;
+  margin-top: 20px;
+  vertical-align: middle;
+}
+.form-group button{
+  height: 60px;
+  width: 120px;
+  background: none;
+  border-radius: 6px;
+  border: 1px #B21BCB solid;
+
+  color: #B21BCB;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+  position: relative;
+  cursor: pointer;
+}
+.form-group button svg{
+  position: absolute;
+  display: block;
+  left: 17px;
+  top: 14px;
+}
+.form-group button p{
+  position: absolute;
+  vertical-align: middle;
+  right: 9px;
+  top: 16px;
+
+}
+
+#btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.close{
+  display: none;
+  top: 43px;
+}
+
+#btnRegister{
+  width: 155px;
+}
