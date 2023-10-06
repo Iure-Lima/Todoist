@@ -63,16 +63,21 @@ function Register(){
           <h2>Cadastro</h2>
 
           <form>
-            <div className="form-group">
-              <label htmlFor="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" placeholder="Digite seu nome" maxLength={39} required/>
-            </div>
+            <div className="groups-inputs">
 
-            <div className="form-group">
-              <label htmlFor="email">E-mail:</label>
-              <input type="text" id="email" name="email" placeholder="Digite seu e-mail" maxLength={39} required/>
-            </div>
+              <div className="form-group">
+                <label htmlFor="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" maxLength={39} required/>
+              </div>
 
+              <div className="form-group">
+                <label htmlFor="email">E-mail:</label>
+                <input type="text" id="email" name="email" placeholder="Digite seu e-mail" maxLength={39} required/>
+              </div>
+
+            </div>
+            
+            <div className="groups-inputs">
             <div className="form-group">
               <label htmlFor="password">Senha:</label>
               <input type={inputType} id="password" name="password" placeholder="Digite sua senha" maxLength={31} required/>
@@ -134,6 +139,11 @@ function Register(){
 
 
             </div>
+
+            </div>
+            
+
+        
 
             <div className="form-group" id="btns">
               <a href="/login">Login</a>

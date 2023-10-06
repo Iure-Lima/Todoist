@@ -1,0 +1,69 @@
+#deleteContainer{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #333333;
+  width: 450px;
+  height: 202px;
+  border-radius: 9px;
+  margin-top: 136px;
+}
+
+#deleteContainer span{
+  text-align: right;
+  width: 100%;
+  padding-top: 11px;
+  padding-right: 11px;
+}
+
+#deleteContainer p{
+  color: white;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+
+  margin-top: 16px;
+  margin-left: 13px;
+  margin-right: 18px;
+  width: 100%;
+}
+#deleteContainer p strong{
+  font-weight: 700;
+}
+#btnsDelete{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  padding-right: 16px;
+  margin-top: 60px;
+  width: 100%;
+
+}
+#delete{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #FF0000;
+  margin-left: 20px;
+  width: 129px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+
+
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+  cursor: pointer;
+}
+#delete:hover{
+  background-color: #9f0101;
+}
+#delete svg{
+  margin-left: 3px;
+}

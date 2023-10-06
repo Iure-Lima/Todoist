@@ -1,0 +1,19 @@
+#btnCancel{
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+  background-color: #393939;
+  width: 140px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+#btnCancel:hover{
+  background-color:#2e2d2d ;
+}

@@ -1,0 +1,25 @@
+.header{
+  width: 100%;
+  height: 71px;
+  background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#userLogo{
+  position: absolute;
+  right: 44px;
+}
+
+.taskComplet{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 130px;
+  width: 44px;
+  color: white;
+}
+.taskComplet svg{
+  margin-right: 3px;
+}
