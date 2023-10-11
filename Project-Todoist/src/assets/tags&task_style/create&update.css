@@ -1,0 +1,153 @@
+#container{
+  width:calc(100% - 180px);;
+  height: 100%;
+}
+.content{
+  width: 360px;
+  height: 367px;
+  background-color: #333333;
+  border-radius: 12px;
+  margin: auto;
+  margin-left: auto;
+  margin-top: 82px;
+}
+.content form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.content form .form-group{
+  width: 293px;
+  height: 96px;
+
+}
+.content .form-group label{
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+  width: 100%;
+  
+}
+.content .form-group input{
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+  outline: none;
+  margin-top: 10px;
+  
+}
+.content .cor{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.content .cor input{
+  width: 145px;
+  height: 80px;
+  padding: 0;
+  border: none;
+}
+.btns{
+  display: flex;
+  justify-content: space-between;
+}
+.btns #send{
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+  position: relative;
+  border: none;
+  background-color: #B21BCB;
+  width: 68px;
+  height: 40px;
+
+}
+
+.btns #send svg{
+  position: absolute;
+  top: 2px;
+  left: 13px;
+}
+
+.btns #send:hover{
+  background-color: #87099d;
+}
+#description{
+  margin-top: 10px;
+  background: none;
+  width: 100%;
+  height: 100px;
+  outline: none;
+  padding-left: 13px;
+  padding-right: 13px;
+  padding-top: 10px;
+  resize: none;
+
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+.multi-fields{
+  display: flex;
+  gap: 20px;
+  margin-top: 23px;
+}
+
+.multi-fields .field{
+  display: flex;
+  flex-direction: column;
+  width: 145px;
+  height: 95px;
+}
+.content.task{
+  width: 559px;
+  height: 500px;
+  margin-top: 30px;
+}
+.content.task .form-group{
+  width: 479px;
+}
+.form-group select{
+  margin-top: 9px;
+  outline: none;
+}
+#data{
+  border: none;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+  padding-right: 20px;
+}
+#prioridade{
+  height: 60px;
+  padding-left: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+#dropTag{
+  height: 60px;
+  padding-left: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+}

@@ -8,6 +8,8 @@ import DeleteTags from "./components/tags/DeleteTags";
 import CreateTask from "./components/task/CreateTask";
 import UpdateTask from "./components/task/UpdateTask";
 import DeleteTask from "./components/task/DeleteTask";
+import DashboardTag from "./components/dashboards/DashboardTag";
+import DashboardTask from "./components/dashboards/DashboardTask";
 
 export const Router = () => {
   return (
@@ -21,6 +23,9 @@ export const Router = () => {
       <Route path="/createtask" element={<CreateTask />} />
       <Route path="/updatetask" element={<UpdateTask />} />
       <Route path="/deletetask" element={<DeleteTask />} />
+      <Route path="/dashboardTags" element={<DashboardTag />} />
+      <Route path="/dashboardTasks" element={<DashboardTask />} />
+
 
     </Routes>
   );

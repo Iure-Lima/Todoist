@@ -1,0 +1,105 @@
+.containerDash{
+  width:calc(100% - 180px);
+  position: relative;
+  padding-left: 101px;
+  padding-right: 40px;
+
+  color: white;
+  font-size: 25px;
+  font-family: Arial;
+  font-weight: 800;
+  word-wrap: break-word;
+}
+
+.bar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  height: 110px;
+  border-bottom: 2px #666666 solid;
+
+}
+a.add{
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 161px;
+  background: none;
+  outline: none;
+  border-radius: 6px; 
+  border: 1px white solid;
+  padding-left: 9px;
+  text-decoration: none;
+
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+
+
+}
+
+section.contentTags{
+  padding-top: 19px;
+  width: 100%;
+  height: 69vh;
+  overflow: auto;
+}
+.contentTags .row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  height: 58px;
+  border-bottom: 2px #666666 solid;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 17px;
+}
+.row .tagName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 30px;
+}
+.row .tagName svg{
+  margin-right: 5px;
+}
+.row .tagName p{
+  color: white;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+.row .btnsActions{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 19px;
+}
+.row .btnsActions span{
+  color: #666666;
+  font-size: 20px;
+  font-family: Arial;
+  font-weight: 500;
+  word-wrap: break-word;
+}
+
+/*Configuração da barra de rolagem*/
+::-webkit-scrollbar {
+  background-color: #d824f8;
+  width: 6px;
+  border-width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9920AD;
+  height: 10px;
+  border-width: 2px;
+}
