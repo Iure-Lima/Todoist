@@ -58,6 +58,19 @@ section.contentTask{
   height: 37px;
   overflow: hidden;
 }
+.row .card .menuBtns{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  right: 10px;
+  bottom: 3px;
+  width: 60px;
+}
+.row .card .menuBtns a{
+  margin-right: 10px;
+}
 
 .row .card .categ{
   display: flex;
@@ -67,7 +80,7 @@ section.contentTask{
 }
 .row .card .categ span{
   color: #ffffff;
-  font-size: 13px;
+  font-size: 14px;
   font-family: Arial;
   font-weight: 400;
   word-wrap: break-word;
@@ -75,56 +88,56 @@ section.contentTask{
 }
 
 /* Configurações dos tipos diferentes de prioridades */
-.card.P1{
+.card.Very.High{
   border: 2px #FE6F65 solid;
 
 }
-.card.P1 .head svg{
+.card.Very.High .head svg{
   stroke: #FE6F65;
   fill: #3E2F2E;
   cursor: pointer;
 }
-.card.P1 .head svg:hover{
+.card.Very.High .head svg:hover{
   fill: #822e28;
 }
 
-.card.P2{
+.card.High{
   border: 2px #F79513 solid;
 
 }
-.card.P2 .head svg{
+.card.High .head svg{
   stroke: #F79513;
   fill: #3E3425;
   cursor: pointer;
 }
-.card.P2 .head svg:hover{
+.card.High .head svg:hover{
   fill: #4d3f2a;
 }
 
-.card.P3{
+.card.Moderate{
   border: 2px #5196FE solid;
 
 }
-.card.P3 .head svg{
+.card.Moderate .head svg{
   stroke: #5196FE;
   fill: #2C333E;
   cursor: pointer;
 }
-.card.P3 .head svg:hover{
+.card.Moderate .head svg:hover{
   fill: #25354e;
 }
 
 
-.card.P4{
+.card.Low{
   border: 2px #9A9EA4 solid;
 
 }
-.card.P4 .head svg{
+.card.Low .head svg{
   stroke: #9A9EA4;
   fill: #3A3A3A;
   cursor: pointer;
 }
-.card.P4 .head svg:hover{
+.card.Low .head svg:hover{
   fill: #303030;
 }
 

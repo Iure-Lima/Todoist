@@ -18,11 +18,11 @@ export const Router = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/createtag" element={<CreateTags />} />
-      <Route path="/updatetag" element={<UpdateTags />} />
-      <Route path="/deletetag" element={<DeleteTags />} />
+      <Route path="/updatetag/:tagId" element={<UpdateTags />} />
+      <Route path="/deletetag/:tagId" element={<DeleteTags />} />
       <Route path="/createtask" element={<CreateTask />} />
-      <Route path="/updatetask" element={<UpdateTask />} />
-      <Route path="/deletetask" element={<DeleteTask />} />
+      <Route path="/updatetask/:taskId" element={<UpdateTask />} />
+      <Route path="/deletetask/:taskId" element={<DeleteTask />} />
       <Route path="/dashboardTags" element={<DashboardTag />} />
       <Route path="/dashboardTasks" element={<DashboardTask />} />
 

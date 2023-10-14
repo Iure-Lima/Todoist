@@ -1,8 +1,86 @@
+import { SubmitHandler, useForm } from "react-hook-form"
 import "../../assets/tags&task_style/create&update.css"
 import Header from "../header/Header"
 import Menu from "../menuLateral/menu"
+import axios from "axios"
+import { useEffect, useState } from "react"
+
+type Inputs = {
+  content: string
+  due_date: string
+  priority: string
+  is_complete: boolean
+  title: string
+  tag_id: number
+}
+
+interface Tag{
+  tag_id: number
+  user_id: number
+  name: string
+  color: string
+}
 
 function CreateTask(){
+
+  const [tags, setTag] = useState<Tag[]>([]);
+  
+  useEffect(() =>{
+    const getTag = async () =>{
+      const res = await axios.get<Tag[]>(`https://to-do-list-backend-qijk.onrender.com/tags`, { headers: {
+        Authorization: `Bearer ${getTokenFromMemory()}`,
+      },})
+      setTag(res.data)
+    }
+    getTag();
+  },[])
+
+  const renderTags = (data:Tag[]) => {
+    return data.map((value) => {
+      return (
+        <option value={value.tag_id}>{value.name}</option>
+      )
+    })
+  };
+
+
+  const {
+    register,
+    handleSubmit
+  } = useForm<Inputs>()
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    if (data.title == null){
+      return
+    }
+
+    const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/tasks',{
+      content: data.content,
+      due_date: data.due_date,
+      priority: data.priority,
+      is_complete: false,
+      title: data.title,
+      tag_id: data.tag_id
+    }, { 
+      headers: {
+        Authorization: `Bearer ${getTokenFromMemory()}`,
+      },
+    })
+
+    console.log(res)
+
+    if (res.status == 201){window.location.href = "/dashboardTasks";}
+
+  } 
+
+  const onCancel = () =>{
+    window.location.href = "/dashboardTasks";
+  }
+
+  function getTokenFromMemory(): string | null {
+    return localStorage.getItem("token");
+  }
+
   return(
     <>
       <Header></Header>
@@ -10,48 +88,46 @@ function CreateTask(){
 
       <div id="container">
         <section className="content task">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
-              <label htmlFor="nomeTask">Nome da Task</label>
-              <input type="text" id="nomeTask" name="nomeTask" placeholder="Nome da Task" required/>
+              <label>Nome da Task</label>
+              <input type="text" id="nomeTask" placeholder="Nome da Task" required {...register("title")}/>
             </div>
             <div className="form-group">
-              <label htmlFor="description">Descrição da Task</label>
-              <textarea name="description" id="description" placeholder="Descrição"/>
+              <label>Descrição da Task</label>
+              <textarea id="description" placeholder="Descrição" {...register("content")}/>
             </div>
             <div className="form-group multi-fields">
               <div className="field">
-                <label htmlFor="data">Data</label>
-                <input type="date" name="data" id="data" required/>
+                <label>Data</label>
+                <input type="date" id="data" required {...register("due_date")}/>
               </div>
 
               <div className="field">
-                <label htmlFor="prioridade">Prioridade</label>
-                <select name="prioridade" id="prioridade" style={{color:"green"}}>
-                  <option value="P1" style={{color:"#FE6F65"}}>Prioridade 1</option>
-                  <option value="P2" style={{color:"#F79513"}}>Prioridade 2</option>
-                  <option value="P3" style={{color:"#5196FE"}}>Prioridade 3</option>
-                  <option value="P4" selected style={{color:"#9A9EA4"}}>Prioridade 4</option>
+                <label>Prioridade</label>
+                <select id="prioridade" {...register("priority")}>
+                  <option value="Very High" style={{color:"#FE6F65"}}>Very High</option>
+                  <option value="High" style={{color:"#F79513"}}>High</option>
+                  <option value="Moderate" style={{color:"#5196FE"}}>Moderate</option>
+                  <option value="Low" selected style={{color:"#9A9EA4"}}>Low</option>
 
                 </select>
               </div>
 
               <div className="field">
-                <label htmlFor="dropTag">Tag</label>
-                <select name="dropTag" id="dropTag" style={{color:"green"}}>
-                  <option value="NULL" selected disabled >Tags</option>
-                  <option value="Exemplo1">Exemplo1</option>
-                  <option value="Exemplo2">Exemplo2</option>
-                  <option value="Exemplo3">Exemplo3</option>
-                  <option value="Exemplo4">Exemplo4</option>
+                <label>Tag</label>
+                
+                <select id="dropTag"  {...register("tag_id")}>
+                  <option value="0" selected disabled >Tags</option>
+                  {renderTags(tags)}
 
                 </select>
               </div>
 
             </div>
             <div className="form-group btns">
-              <button id="btnCancel">Cancelar</button>
-              <button id="send">
+              <button id="btnCancel" onClick={onCancel}>Cancelar</button>
+              <button id="send" onSubmit={handleSubmit(onSubmit)}>
                 <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_54_248)">
 <path d="M15.0855 29.289L17.8964 19.1066L32.9069 18.3206L15.0855 29.289ZM13.9614 7.83163L32.8313 16.8785L17.8209 17.6644L13.9614 7.83163ZM12.9302 5.73692C12.3385 5.45294 11.7065 6.04039 11.9452 6.65175L16.5797 18.4536L13.2047 30.6743C13.0302 31.3063 13.7211 31.8254 14.2799 31.4811L36.0773 18.0654C36.5627 17.7659 36.5261 17.0468 36.0099 16.7998L12.9302 5.73692Z" fill="white"/>

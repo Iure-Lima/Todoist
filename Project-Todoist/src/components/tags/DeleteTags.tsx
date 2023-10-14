@@ -2,19 +2,70 @@ import "../../assets/tags&task_style/delete.css"
 import "../../assets/btnCancel/btnCancel.css"
 import Header from "../header/Header"
 import Menu from "../menuLateral/menu"
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+interface Tag{
+  tag_id: number
+  user_id: number
+  name: string
+  color: string
+}
 
 function DeleteTags(){
+
+  const [nameTag, setNameTag] = useState("");
+  
+  const { tagId } = useParams();
+
+  
+
+  const onCancel = () =>{
+    window.location.href = "/dashboardTags";
+  }
+
+  function getTokenFromMemory(): string | null {
+    return localStorage.getItem("token");
+  }
+
+  useEffect(() =>{
+    const getTag = async () =>{
+      const res = await axios.get<Tag>(`https://to-do-list-backend-qijk.onrender.com/tags/${tagId}`, 
+      { headers: 
+        {
+        Authorization: `Bearer ${getTokenFromMemory()}`,
+        },
+      })
+      setNameTag(res.data.name)
+    }
+    getTag();
+  })
+
+  const deleteTag = async () =>{
+    const res = await axios.delete(`https://to-do-list-backend-qijk.onrender.com/tags/${tagId}`,
+    { 
+      headers: {
+      Authorization: `Bearer ${getTokenFromMemory()}`,
+      },
+    })
+
+    if (res.status == 200){window.location.href = "/dashboardTags"}
+  }
+
+  
+
   return(
     <>
       <Header></Header>
       <Menu></Menu>
       <section id="deleteContainer">
         <span> 
-          <a href="/">
+          <a href="/dashboardTags">
           <svg width="34" height="37" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_38_233)">
-<path d="M25.5 9.18918L8.5 27.5676" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M8.5 9.18918L25.5 27.5676" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<g clipPath="url(#clip0_38_233)">
+<path d="M25.5 9.18918L8.5 27.5676" stroke="#A4A4A4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M8.5 9.18918L25.5 27.5676" stroke="#A4A4A4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </g>
 <defs>
 <clipPath id="clip0_38_233">
@@ -25,11 +76,11 @@ function DeleteTags(){
           </a>
         </span>
 
-        <p>Tem certeza que deseja deletar <strong>lorem</strong>?</p>
+        <p>Tem certeza que deseja deletar <strong>{nameTag}</strong>?</p>
 
         <div id="btnsDelete">
-          <button id="btnCancel">Cancelar</button>
-          <button id="delete">
+          <button id="btnCancel" onClick={onCancel}>Cancelar</button>
+          <button id="delete" onClick={deleteTag}>
             Deletar
             <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.2047 15.5H5.05358C4.64825 15.5 4.25951 15.342 3.97289 15.0607C3.68627 14.7794 3.52525 14.3978 3.52525 14V4.5C3.52525 4.36739 3.57893 4.24022 3.67447 4.14645C3.77001 4.05268 3.89958 4 4.0347 4C4.16981 4 4.29939 4.05268 4.39493 4.14645C4.49047 4.24022 4.54414 4.36739 4.54414 4.5V14C4.54414 14.1326 4.59781 14.2598 4.69335 14.3536C4.78889 14.4473 4.91847 14.5 5.05358 14.5H13.2047C13.3398 14.5 13.4694 14.4473 13.5649 14.3536C13.6605 14.2598 13.7141 14.1326 13.7141 14V4.5C13.7141 4.36739 13.7678 4.24022 13.8633 4.14645C13.9589 4.05268 14.0885 4 14.2236 4C14.3587 4 14.4883 4.05268 14.5838 4.14645C14.6793 4.24022 14.733 4.36739 14.733 4.5V14C14.733 14.3978 14.572 14.7794 14.2854 15.0607C13.9988 15.342 13.61 15.5 13.2047 15.5Z" fill="white"/>

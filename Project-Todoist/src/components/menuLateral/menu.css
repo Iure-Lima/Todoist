@@ -1,7 +1,8 @@
 .menuLateral{
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   position: absolute;
   padding-top: 48px;
   right: 0;
@@ -10,7 +11,12 @@
   background-color: #282828;
 }
 .btnMenu{
-  width: 91px;
+  border: 1px solid #9920AD;
+  border-radius: 6px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  width: 130px;
   height: 30px;
   display: flex;
   flex-direction: row;
