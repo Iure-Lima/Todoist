@@ -53,11 +53,16 @@ function Register(){
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     if (data.password != data.confirmPassword){
-      return
+      window.alert("Senha ou e-mail invalido")
     }
     const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/register',{"username" : data.name, "email": data.email, "password":data.password})
 
-    if (res.status == 201){window.location.href = "/login";}
+    if (res.status == 201){
+      window.location.href = "/login";
+    }else{
+      window.alert("Senha ou e-mail invalido")
+      window.location.reload();
+    }
 
   } 
 
