@@ -102,10 +102,8 @@ function UpdateTask(){
         Authorization: `Bearer ${getTokenFromMemory()}`,
       },
     })
-    console.log(res)
-    console.log(updateData)
 
-    // if (res.status == 200){window.location.href = "/dashboardTasks";}
+    if (res.status == 200){window.location.href = "/dashboardTasks";}
 
   } 
 
