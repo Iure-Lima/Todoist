@@ -62,7 +62,7 @@ function DeleteTask(){
       <Menu></Menu>
       <section id="deleteContainer">
         <span> 
-          <a href="/">
+          <a href="/dashboardTasks">
           <svg width="34" height="37" viewBox="0 0 34 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_38_233)">
 <path d="M25.5 9.18918L8.5 27.5676" stroke="#A4A4A4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
