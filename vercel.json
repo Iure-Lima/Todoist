@@ -2,7 +2,7 @@
   "version": 2,
   "builds":[
     {
-      "src":"Project-Todoist/src/App.tsx",
+      "src":"Project-Todoist/src/Router.tsx",
       "use": "@vercel/node"
     }
   ],
