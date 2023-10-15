@@ -59,7 +59,7 @@ function Register(){
 
     if (res.status == 201){
       window.location.href = "/login";
-    }else{
+    }else if(res.status == 400){
       window.alert("Senha ou e-mail invalido")
     }
 
