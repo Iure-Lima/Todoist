@@ -50,10 +50,6 @@ function CreateTask(){
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    if (data.title == null){
-      return
-    }
-
     const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/tasks',{
       content: data.content,
       due_date: data.due_date,
@@ -66,8 +62,6 @@ function CreateTask(){
         Authorization: `Bearer ${getTokenFromMemory()}`,
       },
     })
-
-    console.log(res)
 
     if (res.status == 201){window.location.href = "/dashboardTasks";}
 
@@ -118,7 +112,7 @@ function CreateTask(){
                 <label>Tag</label>
                 
                 <select id="dropTag"  {...register("tag_id")}>
-                  <option value="0" selected disabled >Tags</option>
+                  <option value={0} selected disabled >Tags</option>
                   {renderTags(tags)}
 
                 </select>

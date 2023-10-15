@@ -59,18 +59,22 @@ function DashboardTask(){
 
   const tagForCard = (tagId: number): Tag | undefined => {
     const foundTag = tags.find(tag => tag.tag_id === tagId);
-    return foundTag || undefined;
+    return foundTag;
   };
 
   const handleIconClick = async (value: Task) => {
-    value.is_completed = true;
-    const res = await axios.put(`https://to-do-list-backend-qijk.onrender.com/tasks/${value.task_id}`,value,{
-      headers: {
-        Authorization: `Bearer ${getTokenFromMemory()}`,
-      },
-    })
+    const confirmation = window.confirm("Deseja concluir essa Task?")
 
-    if (res.status == 200){ window.location.reload();}
+    if (confirmation){
+      value.is_completed = true;
+      const res = await axios.put(`https://to-do-list-backend-qijk.onrender.com/tasks/${value.task_id}`,value,{
+        headers: {
+          Authorization: `Bearer ${getTokenFromMemory()}`,
+        },
+      })
+  
+      if (res.status == 200){ window.location.reload();}
+    }    
   };
 
 

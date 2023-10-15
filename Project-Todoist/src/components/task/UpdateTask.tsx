@@ -85,10 +85,6 @@ function UpdateTask(){
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    if (data.title == null){
-      return
-    }
-    
     const updateData = {
       content: data.content || task?.content,
       due_date: data.due_date || task?.due_date.substring(0,10),
