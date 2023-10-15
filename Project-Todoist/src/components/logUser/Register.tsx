@@ -55,15 +55,16 @@ function Register(){
     if (data.password != data.confirmPassword){
       window.alert("Senha ou e-mail invalido")
     }
-    const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/register',{"username" : data.name, "email": data.email, "password":data.password})
+    try{
+      const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/register',{"username" : data.name, "email": data.email, "password":data.password})
 
-    if (res.status == 201){
-      window.location.href = "/login";
-    }
-    console.log(res.status)
-    
-    if(res.status == 400){
+
+      if (res.status == 201){
+        window.location.href = "/login";
+      }
+    }catch{
       window.alert("Senha ou e-mail invalido")
+      window.location.reload()
     }
 
   } 

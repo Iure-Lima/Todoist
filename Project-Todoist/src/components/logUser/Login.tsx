@@ -33,21 +33,24 @@ function Login(){
   } = useForm<Inputs>()
   
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    if (data.email == null && data.password == null){return}
+    if (data.email == null && data.password == null){
+      window.alert("E-mail ou password invalidos")
+    }
 
-    const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/login',{"email": data.email, "password": data.password})
-
-    saveTokenInMemory(res.data.token)
-
-    if (res.status == 200){window.location.href = "/dashboardTasks";}
-
+    try{
+      const res = await axios.post('https://to-do-list-backend-qijk.onrender.com/login',{"email": data.email, "password": data.password})
+      saveTokenInMemory(res.data.token)
+  
+      if (res.status == 200){window.location.href = "/dashboardTasks";}
+    }catch{
+      window.alert("E-mail ou password invalidos")
+      window.location.reload()
+    }
   } 
 
   function saveTokenInMemory(token: string) {
     localStorage.setItem("token", token);
   }
-
-
 
   return(
     <>
