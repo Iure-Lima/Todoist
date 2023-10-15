@@ -61,7 +61,6 @@ function Register(){
       window.location.href = "/login";
     }else{
       window.alert("Senha ou e-mail invalido")
-      window.location.reload();
     }
 
   } 
